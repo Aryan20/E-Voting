@@ -34,7 +34,7 @@ A step by step series of examples that tell you how to get a development env run
 
 Open the directory where you have saved this site 
 
-Now do `SHIFT + Right Click` and then select either powershell or command prpt accordind to your convinience
+Now do `SHIFT + Right Click` and then select either powershell or command prompt according to your convinience
 
 Now in the terminal window of your choice type -
 
@@ -44,7 +44,7 @@ flask run
 
 And hit enter
 
-now you will see a bunch of text along with a IP address on your terminal window copy it and paste it onto your browser url window
+now you will see a bunch of text along with a IP address on your terminal window copy it and paste it onto your browser url box
 
 ![powershell preview](preview/powershell.png)
 
