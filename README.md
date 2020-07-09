@@ -64,12 +64,12 @@ The home page of website is located at
 ```
 On the website click sign In to login there you will have options to register as a candidate or as a normal voter
 
-after you have succesffuly registered and logged in you will be redirected to - 
+after you have successfully registered and logged in you will be redirected to - 
 ```
 127.0.0.1:5000/vote
 ```
 
-Once you have voted you will not e able to vote again until your vote status is reset before the next election. 
+Once you have voted you will not be able to vote again until your vote status is reset before the next election. 
 
 Once voted you will be redirected to - 
 ```
