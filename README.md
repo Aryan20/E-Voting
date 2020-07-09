@@ -82,7 +82,7 @@ Where you will be able to access the current status of election.
 * [Flask]() - The web framework used
 * [Python](https://www.python.org/) - As Controller
 * [Bootstrap](https://getbootstrap.com/) - Used to design the page
-* [Javascript]() - To make websiter responsive
+* [Javascript]() - To make website responsive
 * [HTML and CSS]() - As backbone
 
 
