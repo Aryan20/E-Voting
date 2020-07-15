@@ -1,7 +1,18 @@
 # E-Vote 
 
-E-Vote is an online voting site that I made as a final project for CS50x course provided by Harvard University's division of continuing education and it hopes to improve the voting procedures used currently as E-voting is cost-efficient as you don't have to go to different places and deploy those bulky voting machines and bring them back to the voting authority which costs a lot because you also have to set up booths and transportation charges are also pretty high not only that but E-vote is also faster as you just have to go to the site and vote you don't have to wait in a queue for your chance nor you have to go out and find your voting booth. E-vote could also attract more voters than traditional methods as sometimes during traditional elections some people don't get a chance to vote because of there current situation like if they had to immediately travel or their location doesn't allow it or they were too lazy to go to the voting booth all those problems can be effectively solved by E-vote.
+E-Vote is an online voting site that I made as a final project for CS50x course provided by Harvard University's division of continuing education and it hopes to improve the voting procedures used currently.
 
+The site saves data to a local SQL database file.
+
+No user is linked to his or her vote so you can have peace of mind that no one can know who voted for who only you know that.
+
+The website requires both voter and candidate registrations but they are just to keep a check that whether you are a real voter or not.
+
+My voting system is currently based on plurality.
+
+## What are the benefits of electronic voting 
+
+electronic voting hopes to improve the voting procedures used currently as electronic voting is cost-efficient as you don't have to go to different places and deploy those bulky voting machines and bring them back to the voting authority which costs a lot because you also have to set up booths and transportation charges are also pretty high not only that but electronic voting is also faster as you just have to go to the site and vote you don't have to wait in a queue for your chance nor you have to go out and find your voting booth. electronic voting could also attract more voters than traditional methods as sometimes during traditional elections some people don't get a chance to vote because of there current situation like if they had to immediately travel or their location doesn't allow it or they were too lazy to go to the voting booth all those problems can be effectively solved by electronic voting.
 
 ## Preview
 ![Homepage preview](preview/home.png)
