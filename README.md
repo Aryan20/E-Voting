@@ -16,15 +16,12 @@ You will need to install the following programs and libraries to run the website
 ```
 Python
 Flask
-Flask session
+Flask_session
 javascript
 ```
 
-To install flask use command -
-`pip install flask`
-
-To install flask session run command -
-`pip install flask session`
+To install requirements use command -
+`pip install -r requirements.txt`
 
 Website folder already contains files required to run javascript.
 
