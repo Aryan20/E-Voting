@@ -35,9 +35,15 @@ def index():
     session.clear()
     return render_template("home/index.html")
 
+@app.route("/privacypolicy")
+def privacypolicy():
+    """Privacy Policy for users"""
+    return render_template("Policies/privacypolicy.html")
 
-
-
+@app.route("/termsofuse")
+def termsofuse():
+    """Privacy Policy for users"""
+    return render_template("Policies/termsofuse.html")
 
 @app.route("/vote", methods=["GET", "POST"])
 @login_required
@@ -509,3 +515,6 @@ def errorhandler(e):
 # Listen for errors
 for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
+
+if __name__ == '__main__':
+    app.run()
