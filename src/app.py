@@ -141,38 +141,48 @@ def main():
         data = db.cursor()
         ak = session["user_id"]
         data.execute("SELECT c_id, name, party, symbol, count FROM candidate")
-        rows = data.fetchall()
-        data.execute("SELECT c_id,count FROM candidate")
-        results = data.fetchall()                
+        rows = data.fetchall()              
         max = 0
         id = 0
-        for row in results:
-            if row[1] > max:
+        winners = []
+        winners.append(" ")
+        for row in rows:
+            if int(row[4]) > max:
                 id = row[0]
-        data.execute("SELECT party FROM candidate WHERE c_id = ?", (id,))
-        winner = data.fetchall()
+                winners[0] = row[2] 
+        for row in rows:
+            if row[4] == max and row[0] != id:
+                winners.append(row[2])
         data.execute("SELECT c_id, COUNT(c_id) FROM candidate")
         totalc = data.fetchall()
         data.execute("SELECT id, COUNT(id) FROM users")
         voter = data.fetchall()
+        nouser = False
+        if voter == None:
+            nouser = True
         a = 1
         data.execute("SELECT c_id, COUNT(c_id) FROM candidate WHERE voted = ?",(a,))
         cv = data.fetchall()
         data.execute("SELECT id, COUNT(id) FROM users WHERE voted = ?",(a,))
         uv = data.fetchall()
         voted = cv[0][1] + uv[0][1]
-        voters = voter[0][0] + totalc[0][0]
+        if nouser == False:
+            voters = totalc[0][0]
+        elif nouser:
+            voters = voter[0][0] + totalc[0][0]
         voted = (voted/voters)*100
-        
+        if len(winners) >= 2:
+            multi = True
+        else:
+            multi = False
         if session["type"] == 1:
             data.execute("SELECT name FROM candidate WHERE c_id = ?",(session["user_id"],))
             name = data.fetchall()
-            return render_template("stats/main.html", username=name[0][0], details = rows, winner=winner[0][0], totalc=totalc[0][0], voters=voters, voted=voted)        
+            return render_template("stats/main.html", username=name[0][0], details = rows, winners=winners, multi = multi, totalc=totalc[0][0], voters=voters, voted=voted)        
         elif session["type"] == 0:
             data.execute("SELECT first, last FROM users WHERE id = ?", (session["user_id"],))
             name = data.fetchall()
-            return render_template("stats/main.html", username=name[0][0], last=name[0][1], details = rows, winner=winner[0][0], totalc=totalc[0][0], voters=voters, voted=voted) 
-
+            return render_template("stats/main.html", username=name[0][0], last=name[0][1], details = rows, winners=winners, multi = multi, totalc=totalc[0][0], voters=voters, voted=voted) 
 
 
 @app.route("/history")
