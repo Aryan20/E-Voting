@@ -154,7 +154,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Current winning party</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{winner}}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{% for winner in winners %} <P>{{winner}}</P> {% if multi %}<br>{%endif%}{% endfor %}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-flag fa-2x text-gray-300"></i>
